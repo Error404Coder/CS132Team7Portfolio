@@ -51,6 +51,8 @@
 						<div>
 							<header>
 								<h2>Preprocessing</strong></h2>
+							<h3>Time Series Analysis</h3>
+
 							</header>
 							<p>
 								To prepare the data for the time series analysis, the dates from the original spreadsheet were extracted through the code below. Observe that two datasets were derived from the original dataset: data with only the month and year and data with the entire date. Do also note that data with null values were dropped.
@@ -75,6 +77,8 @@
 								Executing the code will yield to the graph below. Observe that most of the credit-grabbing tweets were posted during October 2021, January to May 2022 and September 2022. This may have been caused by Bongbong Marcos's filing of candicacy on October 6, 2021, the campaign period from February 8 to May 7, 2022, and Bongbong's attendance to the United Nations General Assembly in September.
 								<img src="images/time-series-graph-1.JPG" class="center-inline-img">
 								<br>
+								
+								
 
 								Finally, below is the code executed to interpolate the data in the objective of filling the missing points provided that only the total frequency per month was utilized in the time series graph. As evident in the code, 365 points were now used to span the entire year. Three interpolation techniques were applied namely, Cubic Spline, Piecewise Cubic Hermite Interpolating Polynomial (PCHIP), and Akima 1D. 
 								<img src="images/time-series-interpolation-1.JPG" class="center-inline-img">
@@ -86,6 +90,24 @@
 										<div id="02e1c0af-0418-4424-a133-bd98692d80d9" class="plotly-graph-div" style="height:100%; width:100%;"></div>
 									<script type="text/javascript" src="plotly2-a.js"></script>
 								</div>
+								<br>
+							</p>
+		
+							<h3>Time Series by Topic</h3>
+							
+							<p>
+								Before plotting the categorized tweet distribution, the dates are separated into two data structures which are separated by their topic: Nutribun and Windmill. As seen in the code below, the sizes of each is also stored for plotting.
+								<img src="images/time-series-tweet-distribution-1.JPG" class="center-inline-img">
+								<br>
+								
+								Afterwards, the difference of the distribution of each dates is taken into consideration using the code below. This combines the data from the different type of topics to form the plot uniting them.
+								<img src="images/time-series-tweet-distribution-2.JPG" class="center-inline-img">
+								<br>
+								
+								Lastly, the code below is executed to plot the graph showing the distribution of the credit-grabbing tweets over the given timeframe. Note that the graph in the following images shows a 2-month gap. This is made to make the graph more compact and show the information more clearly.
+								<img src="images/time-series-tweet-distribution-3.JPG" class="center-inline-img">
+								<br>
+								<img src="images/time-series-tweet-distribution-graph.JPG" class="center-inline-img">
 								<br>
 							</p>
 
