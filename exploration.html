@@ -16,6 +16,10 @@
 				margin: 0 auto; 
 				display: block;
 			}
+			p{
+				color: black;
+				text-align: justify;
+			}
 		</style>
 	</head>
 	<body class="is-preload">
@@ -40,7 +44,7 @@
 							<header>
 								<h1>Data Exploration</strong></h1>
 							</header>
-							<p>This section describes the preprocessing methods performed on the data set. The cleaned data is then used as input to create different graphs in order to identify trends or relationships in the data. Implementations of these graphs is also discussed in this section</p>
+							<p>This section describes the preprocessing methods performed on the data set. The cleaned data is used as input to create different graphs in order to identify trends or relationships in the data. Implementations of these graphs are also discussed in this section</p>
 						</div>
 					</div>
                     <div id="preprocessing" class="row">
@@ -49,7 +53,8 @@
 								<h2>Preprocessing</strong></h2>
 							</header>
 							<p>
-								
+								To prepare the data for the time series analysis, the dates from the original spreadsheet were extracted through the code below. Observe that two datasets were derived from the original dataset: data with only the month and year and data with the entire date. Do also note that data with null values were dropped.
+								<img src="images/time-series-preprocessing.JPG" class="center-inline-img">
                             </p>
 						</div>
 					</div>
@@ -59,17 +64,53 @@
 							<header>
 								<h2>Visualization</strong></h2>
 							</header>
-							<p> The figure below shows the time series graph
-								<img src="images/Capture.jpg" class="center-inline-img">
-								hi
-                            </p>
-						</div>
-					</div>
 
-					<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-						<script type="text/javascript" src="plotly.js"></script>
-						<div id="58fa4bcc-bc76-4a5a-80e8-e14dec04eb8a" class="plotly-graph-div" style="height:100%; width:100%;"></div>
-						<script type="text/javascript" src="plotly2.js"></script>
+							<h3>Time Series by Month</h3>
+							<p> 
+								
+								The code below shows how the time series graph which was <strong>divided by months</strong> was constructed. Frequency of the tweets was counted by month using the value_counts function call. The bins were then sorted in chronological order. Note that some data were dropped because these data were past the 1 year range i.e., belonging in the October 2022 bin. 
+								<img src="images/time-series-plotting-1.JPG" class="center-inline-img">
+								<br>
+
+								Executing the code will yield to the graph below. Observe that most of the credit-grabbing tweets were posted during October 2021, January to May 2022 and September 2022. This may have been caused by Bongbong Marcos's filing of candicacy on October 6, 2021, the campaign period from February 8 to May 7, 2022, and Bongbong's attendance to the United Nations General Assembly in September.
+								<img src="images/time-series-graph-1.JPG" class="center-inline-img">
+								<br>
+
+								Finally, below is the code executed to interpolate the data in the objective of filling the missing points provided that only the total frequency per month was utilized in the time series graph. As evident in the code, 365 points were now used to span the entire year. Three interpolation techniques were applied namely, Cubic Spline, Piecewise Cubic Hermite Interpolating Polynomial (PCHIP), and Akima 1D. 
+								<img src="images/time-series-interpolation-1.JPG" class="center-inline-img">
+								<br>
+
+								Below is the resulting interactive graph upon executing the interpolation code. Clicking on the lines in the legend will hide the other lines plotted in the graph.
+								<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+									<script type="text/javascript" src="plotly-a.js"></script>
+										<div id="02e1c0af-0418-4424-a133-bd98692d80d9" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+									<script type="text/javascript" src="plotly2-a.js"></script>
+								</div>
+								<br>
+							</p>
+
+							<h3>Time Series by Day</h3>
+							<p>
+								Provided that specific dates may have sparked the emergence of credit-grabbing tweets, a time series <strong>divided by days</strong> was also implemented. Recall from the preprocessing phase that data which contained the days of each tweet was also extracted. Using this data, the number of tweets per day were counted. Observe that a similar process was done wherein each day was designated as a bin and the frequency of tweets per day was extracted using the value_counts function. Note that some data were omitted because the said data do not belong to the 1 year range.
+								<img src="images/time-series-plotting-2.JPG" class="center-inline-img">
+								Executing above will result to the graph below. As expected and as observed from the monthly time series, the months of October 2021, January to May 2022, and September 2022 had the most number of credit-grabbing tweets with September 23, 2022, Jan 30, 2022, and October 20, 2021 with the most number of tweets.
+								<img src="images/time-series-graph-2.JPG" class="center-inline-img">
+								<br>
+
+								Lastly, the code below is for the interpolation of the daily data. As observed from the previous graph, there were multiple days wherein no tweets were made on credit grabbing. This is alleviated by initially interpolating the daily data using different interpolators: Cubic Spline, PCHIP, and Akima 1D. If there were still existing dates without any tweets made, these dates were imputed with the mean number of tweets after the interpolation process. It is recommended to explore resampling (upsampling from the monthly data) in the future.
+								<img src="images/time-series-interpolation-2.JPG" class="center-inline-img">
+								<br>
+
+								The interactive graph resulting from the interpolation of the daily data is presented below. Clicking on the symbols in the legend will hide the other plots in the graph.
+
+								<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+									<script type="text/javascript" src="plotly-b.js"></script>
+										<div id="1b1b27a2-01fa-47f8-b4ec-b83652fc1790" class="plotly-graph-div" style="height:100%; width:100%;"></div>
+									<script type="text/javascript" src="plotly2-b.js"></script>
+								</div>
+							</p>
+
+						</div>
 					</div>
 				</div>
 			</article>
