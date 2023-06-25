@@ -56,6 +56,31 @@
 							<p>
 								To prepare the data for the time series analysis, the dates from the original spreadsheet were extracted through the code below. Observe that two datasets were derived from the original dataset: data with only the month and year and data with the entire date. Do also note that data with null values were dropped.
 								<img src="images/time-series-preprocessing.JPG" class="center-inline-img">
+								
+								To add for the preparation, we made two separate DataFrames for each type of topic.
+								<img src="images/time-series-categ-df.JPG" class="center-inline-img">
+								<br>
+								
+								The types of topics came from executing the code below in the exploration stage, where categorical columns are inspected.
+								<img src="images/time-series-categ-code.JPG" class="center-inline-img">
+								<br>
+								Looking at the output, the keywords for the topics are used for the sorting of data on the later stages.
+								<img src="images/time-series-categ-output.JPG" class="center-inline-img">
+								<br>
+								
+								Continuing with the preprocessing, the engagement type columns are listed and used to get the count of average engagement of each topic. This is used in a later plot regarding tweet engagement.
+								<img src="images/time-series-engagement-preprocess.JPG" class="center-inline-img">
+								<br>
+								
+								Two dataframes are again created to separate the topics, but in addition, the count of tweets of each timeframe is also applied. Shown below is the code, which also shows the storing of the data sizes.
+								<img src="images/time-series-tweet-distribution-1.JPG" class="center-inline-img">
+								<br>
+								
+								Afterwards, the difference of the distribution of each dates is taken into consideration using the code below. This combines the data from the different type of topics to form the plot uniting them. This will be useful for a graph shown later.
+								<img src="images/time-series-tweet-distribution-2.JPG" class="center-inline-img">
+								<br>
+								
+								
                             </p>
 						</div>
 					</div>
@@ -65,7 +90,30 @@
 							<header>
 								<h2>Visualization</strong></h2>
 							</header>
-
+		
+							<h3>Time Series by Topic</h3>
+							
+							<p>
+								The code below shows the plotting of the graph showing the distribution of the credit-grabbing tweets over the given timeframe. Note that the graph in the following images shows a 2-month gap. This is made to make the graph more compact and show the information more clearly.
+								<img src="images/time-series-tweet-distribution-3.JPG" class="center-inline-img">
+								<br>
+								
+								Below is the output of the code. Observe that most of the windmill-related tweets appear from around October 2021 to October 2022 while the Nutribun-related tweets are more flat and boomed around June 2022 to October 2022. It also shows
+								<img src="images/time-series-tweet-distribution-graph.jpg" class="center-inline-img">
+								<br>
+							</p>
+						
+							<h3>Time Series by Average Engagement</h3>
+							
+							<p>
+								The code below uses the preprocessed engagement data to plot the average engagement count of the tweets of each topic (Nutribun and Windmill).
+								<img src="images/time-series-engagement-code.JPG" class="center-inline-img">
+								<br>
+								
+								Shown below is the output of the above code. It shows the average amount of engagement each tweet (by topic) gets. As we can see, an average windmill tweet gets more attention/engagement than an average nutribun tweet.
+								<img src="images/time-series-engagement-output.JPG" class="center-inline-img">
+								<br>
+						
 							<h3>Time Series by Month</h3>
 							<p> 
 								
@@ -89,24 +137,6 @@
 										<div id="02e1c0af-0418-4424-a133-bd98692d80d9" class="plotly-graph-div" style="height:100%; width:100%;"></div>
 									<script type="text/javascript" src="plotly2-a.js"></script>
 								</div>
-								<br>
-							</p>
-		
-							<h3>Time Series by Topic</h3>
-							
-							<p>
-								Before plotting the categorized tweet distribution, the dates are separated into two data structures which are separated by their topic: Nutribun and Windmill. As seen in the code below, the sizes of each is also stored for plotting.
-								<img src="images/time-series-tweet-distribution-1.JPG" class="center-inline-img">
-								<br>
-								
-								Afterwards, the difference of the distribution of each dates is taken into consideration using the code below. This combines the data from the different type of topics to form the plot uniting them.
-								<img src="images/time-series-tweet-distribution-2.JPG" class="center-inline-img">
-								<br>
-								
-								Lastly, the code below is executed to plot the graph showing the distribution of the credit-grabbing tweets over the given timeframe. Note that the graph in the following images shows a 2-month gap. This is made to make the graph more compact and show the information more clearly.
-								<img src="images/time-series-tweet-distribution-3.JPG" class="center-inline-img">
-								<br>
-								<img src="images/time-series-tweet-distribution-graph.jpg" class="center-inline-img">
 								<br>
 							</p>
 
