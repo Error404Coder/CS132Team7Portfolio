@@ -10,6 +10,22 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			td {
+				border: 1px solid black;
+				color: black;
+				text-align: center;
+				vertical-align: middle;
+			}
+			th {
+				border: 1px solid black;
+				color: black;
+				text-align: center;
+				width: 200px;
+				font-weight: 700;
+			}
+		</style>
+
 	</head>
 	<body class="is-preload">
 
@@ -32,12 +48,346 @@
 							<header>
 								<h1>Statistical Modeling</h1>
 							</header>
-                            <h2>Normality Tests</h2>
-                            <p>asd</p>
+                            <h2>Normality and Equal Variances Tests</h2>
+                            <p>
+								Before proceeding with the statistical approach, the data was split into three different categories: before, during and after the campaign period. 
+								<br><br>
+								For the normality test, Anderson-Darling and Shapiro-Wilk tests were first applied to determine the normality of the splitted data sets. As for checking if the variances are equal, the Levene test was performed on the said data sets.
+							</p>
+							<p>
+								<strong>Anderson-Darling Test:</strong>
+								<br>
+								<br>
+								&emsp;H<sub>o</sub> = The data is normally distributed.
+								<br>
+								&emsp;H<sub>a</sub> = The data is not normally distributed.
+							</p>
+							<table>
+								<tr>
+									<th>
+										Dataset
+									</th>
+									<th>
+										A Test Statistic
+									</th>
+									<th>
+										Critical Values
+									</th>
+									<th>
+										Significance Level
+									</th>
+								</tr>
+
+								<tr>
+									<td rowspan="3">
+										Pre-campaign
+									</td>
+									<td rowspan="3">
+										2.419
+									</td>
+									<td>
+										0.705
+									</td>
+									<td>
+										0.050
+									</td>
+								</tr>
+								<tr>
+									<td>
+										0.822
+									</td>
+									<td>
+										0.025
+									</td>	
+								</tr>
+								<tr>
+									<td>
+										0.978
+									</td>
+									<td>
+										0.010
+									</td>
+								</tr>
+
+								<tr>
+									<td rowspan="3">
+										Campaign
+									</td>
+									<td rowspan="3">
+										7.718
+									</td>
+									<td>
+										0.718
+									</td>
+									<td>
+										0.050
+									</td>
+								</tr>
+								<tr>
+									<td>
+										0.838
+									</td>
+									<td>
+										0.025
+									</td>	
+								</tr>
+								<tr>
+									<td>
+										0.996
+									</td>
+									<td>
+										0.010
+									</td>
+								</tr>
+
+								<tr>
+									<td rowspan="3">
+										Post-campaign
+									</td>
+									<td rowspan="3">
+										4.636
+									</td>
+									<td>
+										0.703
+									</td>
+									<td>
+										0.050
+									</td>
+								</tr>
+								<tr>
+									<td>
+										0.820
+									</td>
+									<td>
+										0.025
+									</td>	
+								</tr>
+								<tr>
+									<td>
+										0.975
+									</td>
+									<td>
+										0.010
+									</td>
+								</tr>
+							</table>
+
+							<p>
+								<strong>Shapiro-Wilk Test:</strong>
+								<br>
+								<br>
+								&emsp;H<sub>o</sub> = The data is normally distributed.
+								<br>
+								&emsp;H<sub>a</sub> = The data is not normally distributed.
+							</p>
+
+							<table>
+								<tr>
+									<th>
+										Dataset
+									</th>
+									<th>
+										P-value
+									</th>
+								</tr>
+								<tr>
+									<td>
+										Pre-campaign
+									</td>
+									<td>
+										5.070e-05
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Campaign
+									</td>
+									<td>
+										5.648e-09
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Post-campaign
+									</td>
+									<td>
+										9.822e-08
+									</td>
+								</tr>
+							</table>
+
+							<p>
+								Given that the test statistics for all data sets are significantly larger than their respective critical values for the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.anderson.html">Anderson-Darling</a> Test, the null hypothesis is rejected and it can be concluded that the three datasets do not have a normal distribution. On the other hand, provided that the p-values for the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html">Shapiro-Wilk</a> Test across all data sets are less than the level of significance of 0.05, the null hypothesis is rejected which further confirms that the datasets are not normal.
+							</p>
+
+							<p>
+								<strong>Shapiro-Wilk Test:</strong>
+								<br>
+								<br>
+								&emsp;H<sub>o</sub> = The datasets have equal variances.
+								<br>
+								&emsp;H<sub>a</sub> = The datasets do not have equal variances.
+							</p>
+								<table>
+									<tr>
+										<th>
+											Datasets compared
+										</th>
+										<th>
+											P-value
+										</th>
+									</tr>
+									<tr>
+										<td>
+											Pre-campaign vs Campaign vs Post-campaign
+										</td>
+										<td>
+											0.048
+										</td>
+									</tr>
+								</table>
+							</p>
+
+							<p>
+								The p-value for the <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.levene.html">Levene</a> Test is less than the level of significance 0.05 which suggests that we reject the null hypothesis implying the data sets do not have equal variances.
+							</p>
+
                             <h2>Kruskal-Wallis Test</h2>
-                            <p>asd</p>
+                            <p>
+								First the <a href="https://stats.libretexts.org/Courses/Las_Positas_College/Math_40%3A_Statistics_and_Probability/12%3A_Nonparametric_Statistics/12.11%3A_KruskalWallis_Test">assumptions</a> for the Kruskal-Wallis Test are as follows:
+								<br>
+								<br>
+								&emsp;1. The data does not have to be normally distributed.
+								<br>
+								&emsp;2. The data must have equal variances.
+								<br>
+								<br>
+								From the section on Normality and Equal Variances Tests, Assumption 2 is violated by the current dataset. As a result, the medians or means cannot be compared since minor differences in the variances may result to higher errors <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.3561">(Fagerland & Sandvik, 2009)</a>. Therefore, this test can only conclude if there is a statistical difference between the groups i.e., checking if a group's sample could have significantly greater/lesser values than the other samples from different groups.
+								<br>
+								<br> 
+								The data in the three categories (pre-campaign, campaign, post-campaign) will be compared using the Kruskal-Wallis Test in order to answer the following hypothesis:
+								<br>
+								<br>
+								&emsp;H<sub>o</sub> = There is no significant difference in the number of BBM credit-grabbing tweets before, during and after the campaign period.
+								<br>
+								&emsp;H<sub>a</sub> = There is significant difference in the number of BBM credit-grabbing tweets before, during and after the campaign period.
+								<br>
+								<br>
+								The table below presents the test statistic value and p-value after performing Kruskal-Wallis Test on the non-normal splitted datasets with 0.05 level of significance using Scipy. 	
+							</p>
+							<table>
+								<tr>
+									<th>
+										Datasets compared
+									</th>
+									<th>
+										H Test statistic
+									</th>
+									<th>
+										x<sup>2</sup> critical value (df=2)
+									</th>
+									<th>
+										P-value
+									</th>
+									<th>
+										Significance Level
+									</th>
+								</tr>
+								<tr>
+									<td>
+										Pre-campaign vs Campaign vs Post-campaign
+									</td>
+									<td>
+										5.423
+									</td>
+									<td>
+										5.991
+									</td>
+									<td>
+										0.066
+									</td>
+									<td>
+										0.05
+									</td>
+								</tr>
+							</table>
+							<p>
+								Observe that for the <a href="https://www.sciencedirect.com/topics/mathematics/kruskal-wallis-test">Kruskal-Wallis Test </a>, the test statistic is less than the critical value and the p-value is greater than the significance level thus we fail to reject the null hypothesis. In other words, there is no significant difference in the number of BBM credit-grabbing tweets before, during and after the campaign period. To explore more on this finding, a post hoc analysis was also performed through Mann-Whitney U Test.
+							</p>
                             <h2>Mann-Whitney U Test</h2>
-                            <p>asd</p>
+                            <p>
+								First it must be noted that the Kruskal-Wallis Test is equivalent to the Mann-Whitney U Test but for more than two groups <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2881615/">(du Prel et al., 2010)</a>. Hence, the same assumptions from Kruskal-Wallis can be applied. Note that with Mann-Whitney U Test pairwise comparisons would be made with the campaign period as the point of reference.
+								<br>
+								<br>
+								To further check for possible statistical significance, a One-Tailed Mann-Whitney U Test is performed for post hoc analysis of pairwise groups with the following hypothesis:
+								<br>
+								<br>
+								&emsp;H<sub>o</sub> = There is no significant change in the number of BBM credit-grabbing tweets before, during and after the campaign period.
+								<br>
+								&emsp;H<sub>a</sub> = BBM credit-grabbing tweets are significantly less during the campaign period than the time period being compared.
+								<br>
+								<br>
+							</p>
+							<table>
+								<tr>
+									<th>
+										Datasets compared
+									</th>
+									<th>
+										U Test statistic
+									</th>
+									<th>
+										Critical value
+									</th>
+									<th>
+										P-value
+									</th>
+									<th>
+										Significance Level
+									</th>
+								</tr>
+								<tr>
+									<td>
+										Campaign vs Pre-campaign
+									</td>
+									<td>
+										309
+									</td>
+									<td>
+										331
+									</td>
+									<td>
+										0.009
+									</td>
+									<td>
+										0.05
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Campaign vs Post-campaign
+									</td>
+									<td>
+										382
+									</td>
+									<td>
+										317
+									</td>
+									<td>
+										0.201
+									</td>
+									<td>
+										0.05
+									</td>
+								</tr>
+							</table>
+							<p>
+								Contrary to the results of the Kruskal-Wallis Test, the One-tailed <a href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Mostly_Harmless_Statistics_(Webb)/13%3A_Nonparametric_Tests/13.05%3A__Mann-Whitney_U_Test">Mann Whitney U Test</a> shows that for the campaign and pre-campaign datasets, the test statistic is less than the critical value and the p-value is less than the significance level therefore the null hypothesis is rejected. The implication of this finding is that there are significantly less BBM credit-grabbing tweets during the campaign period than the pre-campaign period. However, for the campaign vs post-campaign Mann Whitney U Test both the test statistic and the p-value are greater than the critical value and significance level, respectively. This implies that there is no significant difference between the number of BBM credit-grabbing tweets during and after the campaign period. 
+								<br>
+								<br>
+								To discuss the possible causes to these results, an event detection modeling was performed on the splitted datasets.
+							</p>
+
 						</div>
 					</div>
                     <div class="row">
