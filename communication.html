@@ -11,6 +11,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
+			#meth2, #meth1 {
+				max-width: 80%;
+			}
 			td {
 				border: 1px solid black;
 				color: black;
@@ -27,6 +30,7 @@
 			.chatter-graph {
 				max-width: 100%;
 			}
+			
 		</style>
 	</head>
 	<body class="is-preload">
@@ -52,21 +56,28 @@
 										to the rampant misinformation propagated in social media platforms promoting certain candidates. One of said 
 										candidates is Bongbong Marcos (BBM), which according to an investigation made by Inquirer, 100 Facebook Pages 
 										related to BBM with over 6 million followers were spreading misinformation about Martial Law, personal achievements
-										 and plunder cases.1 In addition to this, Rappler provided a data showcasing that majority of Twitter users which used
-										  the tag #LabanMarcos were only created near BBM’s declaration of his candidacy.2 This report by Rappler implies that these Twitter users may have been created for the purpose of promoting BBM’s presidential campaign. Given these findings, the objective of this study is to determine if the number of credit grabbing tweets associated with BBM may have significantly changed during the presidential campaign period. The results from this study may be used to identify which possible events could have triggered the spike in fake news for future fact-checking algorithms.</p>
+										 and plunder cases. In addition to this, Rappler provided a data showcasing that majority of Twitter users which used
+										  the tag #LabanMarcos were only created near BBM’s declaration of his candidacy. This report by Rappler implies that these Twitter users may have been created for the purpose of promoting BBM’s presidential campaign. Given these findings, the objective of this study is to determine if the number of credit grabbing tweets associated with BBM may have significantly changed during the presidential campaign period. The results from this study may be used to identify which possible events could have triggered the spike in fake news for future fact-checking algorithms.</p>
 							<h1>Materials and Methods</h1>
 										<p>The methodology can be summarized in the following steps:</p>
-										<p>Collecting credit-grabbing tweets spanning the campaign period 
+										<p>1. Collecting credit-grabbing tweets spanning the campaign period 
 											using the Python library snscrape</p>
-										<p>Manual misinformation labeling with VERA Files
-criteria as basis [5]
-a. Is it a statement of fact?
-b. Is it feasible?
-c. Is it relevant?</p>
+										<img src="images/meth1.png" class="center-inline-img" id="meth1">
+										
+										<p>2. Manual misinformation labeling with VERA Files criteria as basis </p>
 
-										<p>Data preprocessing and visualization using Pandas, Matplotlib, Seaborn and</p>
-										<p>Computing statistical significance with Mann-Whitney U </p>
-										<p>Determining specific spikes in misinformation using Event Detection Mod</p>
+										<img src="images/meth2.png" class="center-inline-img" id="meth2" >
+
+
+
+										<p>3. Data preprocessing and visualization using Pandas, Matplotlib, Seaborn and Plotly</p>
+										<img src="images/meth3.1.png" class="center-inline-img" >
+										<img src="images/meth3.png" class="center-inline-img" >
+										<p>4. Computing statistical significance with Mann-Whitney U </p>
+										<img src="images/meth4.png" class="center-inline-img" >
+										<p>5. Determining specific spikes in misinformation using Event Detection Modeling</p>
+										<img src="images/meth5.2.png" class="center-inline-img"  >
+										<img src="images/meth5.1.png" class="center-inline-img"  >
 
 							<h1>Results and Discussion</h1>
 							<table>
@@ -186,8 +197,20 @@ c. Is it relevant?</p>
 								has started
 							</p>
 
-							<img src="images/tweeter-misinfo-chatter-peak.PNG" class="center-inline-img" class="chatter-graph">
-							<img src="images/tweeter-misinfo-chatter-change.PNG" class="center-inline-img" class="chatter-graph">
+							<img src="images/meth5.2.png" class="center-inline-img"  >
+							<p>
+								Numerous dates pop up in the event detection model. October 20 and 21, 2021 are the first
+dates of the peak and the change event, respectively. These dates are within the same
+month as the date that Bongbong Marcos filed for his certificate of candidacy (COC) on
+October 6, 2021. Note that after the peak and the change points, there is a noticeable
+drop in the number of misinformation tweets. It was on January 24 and January 30 of 2022
+that the number of tweets started to rise again. This drop might be explained by Twitter’s
+report on suspending hundreds of twitter accounts for violating platform manipulation and
+spam policy. The next and last change point detected was on May 29, 2022, weeks after
+the election. Little to no tweets appeared afterwards, until September 2022 where another
+peak can be seen, September 23, 2022. This peak could be the result of Joe Biden praising
+BBM for his ‘work’ on windmills, on September 22, 2022 at the UN General Assembly.
+							</p>
 							
 							<h1>Implications</h1>
 									<p>asd</p>
