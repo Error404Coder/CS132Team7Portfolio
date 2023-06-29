@@ -10,6 +10,24 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			td {
+				border: 1px solid black;
+				color: black;
+				text-align: center;
+				vertical-align: middle;
+			}
+			th {
+				border: 1px solid black;
+				color: black;
+				text-align: center;
+				width: 200px;
+				font-weight: 700;
+			}
+			.chatter-graph {
+				max-width: 100%;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -37,13 +55,147 @@
 										 and plunder cases.1 In addition to this, Rappler provided a data showcasing that majority of Twitter users which used
 										  the tag #LabanMarcos were only created near BBM’s declaration of his candidacy.2 This report by Rappler implies that these Twitter users may have been created for the purpose of promoting BBM’s presidential campaign. Given these findings, the objective of this study is to determine if the number of credit grabbing tweets associated with BBM may have significantly changed during the presidential campaign period. The results from this study may be used to identify which possible events could have triggered the spike in fake news for future fact-checking algorithms.</p>
 							<h1>Materials and Methods</h1>
-                            <p>asd</p>
+										<p>The methodology can be summarized in the following steps:</p>
+										<p>Collecting credit-grabbing tweets spanning the campaign period 
+											using the Python library snscrape</p>
+										<p>Manual misinformation labeling with VERA Files
+criteria as basis [5]
+a. Is it a statement of fact?
+b. Is it feasible?
+c. Is it relevant?</p>
+
+										<p>Data preprocessing and visualization using Pandas, Matplotlib, Seaborn and</p>
+										<p>Computing statistical significance with Mann-Whitney U </p>
+										<p>Determining specific spikes in misinformation using Event Detection Mod</p>
+
 							<h1>Results and Discussion</h1>
-                            <p>asd</p>
+							<table>
+								<tr>
+									<th colspan="5">Kruskall-Wallis Test</th>
+								</tr>
+								<tr>
+									<th>
+										Datasets compared
+									</th>
+									<th>
+										Test Statistic
+									</th>
+									<th>
+										x2 critical <br> value (df =2 )
+									</th>
+									<th>
+										p-value
+									</th>
+									<th>
+										Significance Level
+									</th>
+								</tr>
+
+								<tr>
+									<td>
+										Campaign vs pre-campaign
+									</td>
+									<td>
+										5.423
+									</td>
+									<td>
+										5.991
+									</td>
+									<td>
+										0.066
+									</td>
+									<td>
+										0.05
+									</td>
+								</tr>
+							</table>
+
+							<p>
+								Given that the p-value is less than the significance level, we fail to reject the null hypothesis,
+								i.e., there is no significant difference in the number of BBM credit-grabbing tweets before,
+								during and after the campaign period. This implies that the number of BBM credit-grabbing
+								tweets may have been prevalent before and after the campaign period. To confirm this, a post
+								hoc analysis was also performe
+							</p>
+
+
+							<table>
+								<tr>
+									<th colspan="5">One-Tailed Mann-Whitney U Test</th>
+								</tr>
+								<tr>
+									<th>
+										Datasets compared
+									</th>
+									<th>
+										Test Statistic
+									</th>
+									<th>
+										Critical value
+									</th>
+									<th>
+										p-value
+									</th>
+									<th>
+										Significance Level
+									</th>
+								</tr>
+
+								<tr>
+									<td>
+										Campaign vs pre-campaign
+									</td>
+									<td>
+										309
+									</td>
+									<td>
+										331
+									</td>
+									<td>
+										0.009
+									</td>
+									<td>
+										0.05
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										Campaign vs post-campaign
+									</td>
+									<td>
+										382
+									</td>
+									<td>
+										317
+									</td>
+									<td>
+										0.201
+									</td>
+									<td>
+										0.05
+									</td>
+								</tr>
+							</table>
+							
+							<p>
+								With the p-value less than the significance level for the campaign vs pre-campaign
+								datasets, the null hypothesis is rejected, i.e., BBM credit-grabbing tweets are significantly
+								less during the campaign period compared to the pre-campaign period. It may be the case
+								that BBM credit-grabbing tweets were even more widespread before the campaign period
+								has started
+							</p>
+
+							<img src="images/tweeter-misinfo-chatter-peak.PNG" class="center-inline-img" class="chatter-graph">
+							<img src="images/tweeter-misinfo-chatter-change.PNG" class="center-inline-img" class="chatter-graph">
+							
 							<h1>Implications</h1>
-                            <p>asd</p>
+									<p>asd</p>
 							<h1>Conclusion</h1>
-                            <p>asd</p>
+									<p>From the statistical tests, it can be concluded that BBM credit-grabbing tweets were already
+prevalent before the presidential campaign. It is therefore recommended to explore data beyond
+the project’s data collection timeline, October 2021 to September 2022, in order to trace the wave of
+misinformation associated with the 2022 Philippine Electi</p>
 						</div>
 					</div>
 				</div>
