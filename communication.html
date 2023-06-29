@@ -52,12 +52,19 @@
 					<div class="row">
 						<div>
 							<h1>Introduction</h1>
-									<p>With the recent results of the 2022 Philippine Presidential Elections, fake news became a widespread topic due 
-										to the rampant misinformation propagated in social media platforms promoting certain candidates. One of said 
-										candidates is Bongbong Marcos (BBM), which according to an investigation made by Inquirer, 100 Facebook Pages 
-										related to BBM with over 6 million followers were spreading misinformation about Martial Law, personal achievements
-										 and plunder cases. In addition to this, Rappler provided a data showcasing that majority of Twitter users which used
-										  the tag #LabanMarcos were only created near BBM’s declaration of his candidacy. This report by Rappler implies that these Twitter users may have been created for the purpose of promoting BBM’s presidential campaign. Given these findings, the objective of this study is to determine if the number of credit grabbing tweets associated with BBM may have significantly changed during the presidential campaign period. The results from this study may be used to identify which possible events could have triggered the spike in fake news for future fact-checking algorithms.</p>
+									<p>
+										With the recent results of the 2022 Philippine Presidential Elections, fake
+									news became a widespread topic due to the misinformation propagated in
+									social media platforms promoting certain candidates [1][2][3]. One of said
+									candidates is Bongbong Marcos (BBM), which based on a Rappler report
+									showed majority of Twitter users which used the hashtag #LabanMarcos
+									were only created near BBM’s declaration of candidacy [4]. This report by
+									Rappler implies that these Twitter users may have been created for the
+									purpose of promoting BBM’s presidential campaign. Given these findings,
+									the objective of this study is to determine if the number of credit grabbing
+									tweets associated with BBM may have significantly changed during the
+									presidential campaign period.
+									</p>
 							<h1>Materials and Methods</h1>
 										<p>The methodology can be summarized in the following steps:</p>
 										<p>1. Collecting credit-grabbing tweets spanning the campaign period 
@@ -73,8 +80,10 @@
 										<p>3. Data preprocessing and visualization using Pandas, Matplotlib, Seaborn and Plotly</p>
 										<img src="images/meth3.1.png" class="center-inline-img" >
 										<img src="images/meth3.png" class="center-inline-img" >
-										<p>4. Computing statistical significance with Mann-Whitney U </p>
+
+										<p>4. Computing statistical significance with Kruskall Mann-Whitney U Tests</p>
 										<img src="images/meth4.png" class="center-inline-img" >
+
 										<p>5. Determining specific spikes in misinformation using Event Detection Modeling</p>
 										<img src="images/meth5.2.png" class="center-inline-img"  >
 										<img src="images/meth5.1.png" class="center-inline-img"  >
@@ -126,7 +135,7 @@
 								i.e., there is no significant difference in the number of BBM credit-grabbing tweets before,
 								during and after the campaign period. This implies that the number of BBM credit-grabbing
 								tweets may have been prevalent before and after the campaign period. To confirm this, a post
-								hoc analysis was also performe
+								hoc analysis was also performed
 							</p>
 
 
@@ -199,25 +208,35 @@
 
 							<img src="images/meth5.2.png" class="center-inline-img"  >
 							
-							<h1>Implications</h1>
 							<p>
 								Numerous dates pop up in the event detection model. October 20 and 21, 2021 are the first
-dates of the peak and the change event, respectively. These dates are within the same
-month as the date that Bongbong Marcos filed for his certificate of candidacy (COC) on
-October 6, 2021. Note that after the peak and the change points, there is a noticeable
-drop in the number of misinformation tweets. It was on January 24 and January 30 of 2022
-that the number of tweets started to rise again. This drop might be explained by Twitter’s
-report on suspending hundreds of twitter accounts for violating platform manipulation and
-spam policy. The next and last change point detected was on May 29, 2022, weeks after
-the election. Little to no tweets appeared afterwards, until September 2022 where another
-peak can be seen, September 23, 2022. This peak could be the result of Joe Biden praising
-BBM for his ‘work’ on windmills, on September 22, 2022 at the UN General Assembly.
+								dates of the peak and the change event, respectively. These dates are within the same
+								month as the date that Bongbong Marcos filed for his certificate of candidacy (COC) on
+								October 6, 2021. Note that after the peak and the change points, there is a noticeable
+								drop in the number of misinformation tweets. It was on January 24 and January 30 of 2022
+								that the number of tweets started to rise again. This drop might be explained by Twitter’s
+								report on suspending hundreds of twitter accounts for violating platform manipulation and
+								spam policy. The next and last change point detected was on May 29, 2022, weeks after
+								the election. Little to no tweets appeared afterwards, until September 2022 where another
+								peak can be seen, September 23, 2022. This peak could be the result of Joe Biden praising
+								BBM for his ‘work’ on windmills, on September 22, 2022 at the UN General Assembly.
+							</p>
+							<h1>Implications</h1>
+							<p>
+
 							</p>
 							<h1>Conclusion</h1>
-									<p>From the statistical tests, it can be concluded that BBM credit-grabbing tweets were already
-prevalent before the presidential campaign. It is therefore recommended to explore data beyond
-the project’s data collection timeline, October 2021 to September 2022, in order to trace the wave of
-misinformation associated with the 2022 Philippine Electi</p>
+								<p>
+									From the statistical tests, it can be concluded that BBM credit-grabbing tweets were
+									already prevalent before the presidential campaign. It is therefore recommended to explore
+									data beyond the project’s data collection timeline, October 2021 to September 2022, in order
+									to trace the wave of misinformation associated with the 2022 Philippine Elections. Moreover,
+									the analysis of the dates shows that BBM’s filing for COC, the suspension of pro-BBM
+									Twitter accounts, the end of elections, and Joe Biden’s mention of the windmills occurs near
+									the peaks and change points of dis/misinformation tweets. These dates could be further
+									studied to determine the existence/non-existence of a correlation and/or causation to the
+									amount of dis/misinformation tweets.
+								</p>
 						</div>
 					</div>
 				</div>
