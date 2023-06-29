@@ -401,18 +401,43 @@
 							</p>
 							<h2>PELT Algorithm</h2>
 							<p>
-								The algorithm used in the event detection model was the Pruned Exact Linear Time (PELT) algorithm. The PELT algorithm has one parameter called the penalty value. The penalty value determines the number of change points that will be displayed in the model. This is tweaked mainly based on ... add stuff here.
+								The algorithm used in the event detection model was the Pruned Exact Linear Time (PELT) algorithm. The PELT algorithm has one parameter called the penalty value. The penalty value determines the number of change points that will be displayed in the model. Lowering the penalty value subjects the dates to have a higher sensitivity. Hence, a higher penalty is desired to avoid including dates that may be irrelevant. After a few tweaks on this parameter, the penalty value of 4 was chosen with the results shown below.
 							</p>
+							<img src="images/event-modeling-penalty-4.JPG" class="center-inline-img">
 							<p>
-								Add Image here
+								In the image above, we can see the results of choosing the penalty value of 4. This is also the same results that we get if we change the penalty value to 3 (lowering the penalty value). This implies that these dates are significant for our findings.
 							</p>
+							<img src="images/event-modeling-penalty-5.JPG" class="center-inline-img">
 							<p>
-								In the image above, we can see the different results of changing the penalty values on the number of change points. *Discuss discuss
+								Changing the penalty value to 5 shows no change points as shown above. Hence, considering the data with a low sensitivity, the penalty value of 4 was chosen.
 							</p>
-							<h2>Interpretting and Explaining the Results</h2>
-							<h3>Dates obtained</h3>
-							<h3>Political Events near the dates</h3>
-                            <p>asd</p>
+							<img src="images/event-modeling-peaks.JPG" class="center-inline-img">
+							<p>
+								The parameter for the peaks that were relevant for tweaking is the minimum heigh of the considered peak. For this we chose 5 as the height. Lowering the peak height to 4, adds two more peaks that might be irrelevant to our findings. Additionally, the height of 4 would be just 1 tweet away from numerous points in the data.
+							</p>
+							<h2>Interpretting and Explaining the Results via Real-life Events</h2>
+							<img src="images/event-modeling-labels" class="center-inline-img">
+							<p>
+								The dates above are the dates that were gathered from the event-detection modelling. The peak dates are October 20, 2021, January 30, 2022, and September 23, 2022. The dates for the change points are October 21, 2021, January 24, 2022, and May 29, 2022.
+							</p>
+							<img src="images/event-modeling-first-dates" class="center-inline-img">
+							<p>
+								The first dates obtained from the peak and change points are October 20, 2022, and October 21, 2022. In the days of October, multiple tweets can be seen within the said month. This is the month that BBM has filed his Certificate of Candidacy (CoC), October 6, 2021
+								<a href="https://www.pna.gov.ph/articles/1155753">(PNA, 2021)</a>
+								. The number of tweets after this month dropped.
+							</p>
+							<img src="images/event-modeling-second-dates" class="center-inline-img">
+							<p>
+								Only up until the change point January 24, 2022 do we see an increase of tweets. The second peak (January 30, 2022) can also be seen in this month. It was reported by Twitter to the AFP that Twitter accounts supporting BBM was suspended due to violation of platform manipulation and spam policy
+								<a href="https://www.rappler.com/nation/elections/twitter-suspends-accounts-ferdinand-bongbong-marcos-jr-network-january-2022/">(Rappler, 2022)</a>
+								. 
+							</p>
+							<img src="images/event-modeling-last-dates" class="center-inline-img">
+							<p>
+								The high number of tweets continued up until the next change point at May 29, 2022 (end of elections month). Little to no tweets were seen after the last change point. Only on September 23, 2022 do we see a large amount of tweets (last peak). This is the day after Joe Biden praised BBM for his ‘work’ on windmills, on September 22, 2022 at the UN General Assembly 
+								<a href="https://www.philstar.com/pilipino-star-ngayon/bansa/2022/09/23/2211712/biden-impressed-sa-ilocos-norte-windmills-na-itinayo-naman-ng-private-sector">(Philstar, 2022)</a>
+								.
+							</p>
 						</div>
 					</div>
 				</div>
