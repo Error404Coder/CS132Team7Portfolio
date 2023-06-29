@@ -385,7 +385,7 @@
 								Contrary to the results of the Kruskal-Wallis Test, the One-tailed <a href="https://stats.libretexts.org/Bookshelves/Introductory_Statistics/Mostly_Harmless_Statistics_(Webb)/13%3A_Nonparametric_Tests/13.05%3A__Mann-Whitney_U_Test">Mann Whitney U Test</a> shows that for the campaign and pre-campaign datasets, the test statistic is less than the critical value and the p-value is less than the significance level therefore the null hypothesis is rejected. The implication of this finding is that there are significantly less BBM credit-grabbing tweets during the campaign period than the pre-campaign period. However, for the campaign vs post-campaign Mann Whitney U Test both the test statistic and the p-value are greater than the critical value and significance level, respectively. This implies that there is no significant difference between the number of BBM credit-grabbing tweets during and after the campaign period. 
 								<br>
 								<br>
-								To discuss the possible causes to these results, an event detection modeling was performed on the splitted datasets.
+								To analyze the possible causes to these results, a computational was used on the split datasets.
 							</p>
 
 						</div>
@@ -393,16 +393,22 @@
                     <div class="row">
 						<div>
 							<header>
-								<h1>Event Detection Modeling</h1>
+								<h1>Computational Modeling</h1>
 							</header>
+							<h2>Event Detection Modeling</h2>
+							<p>
+								Event detection model was selected as the computational model to analyze the dataset. Event detection modeling detects change points and peaks on the dataset. Using these outputs, dates with the most amount of disinformation tweets and dates that indicate a change in pattern was used to find events that contributed to the dataset's pattern.
+							</p>
 							<h2>PELT Algorithm</h2>
-							<h3>What is is?</h3>
-							<h3>What does it do?</h3>
-							<h3>How does it do it?</h3>
-							<h2>Tweaking the Parameters</h2>
-							<h3>Penalty value</h3>
-							<h3>Estimating the desired parameter</h3>
-							<p> Include images of the different results on tweaking the parameter</p>
+							<p>
+								The algorithm used in the event detection model was the Pruned Exact Linear Time (PELT) algorithm. The PELT algorithm has one parameter called the penalty value. The penalty value determines the number of change points that will be displayed in the model. This is tweaked mainly based on ... add stuff here.
+							</p>
+							<p>
+								Add Image here
+							</p>
+							<p>
+								In the image above, we can see the different results of changing the penalty values on the number of change points. *Discuss discuss
+							</p>
 							<h2>Interpretting and Explaining the Results</h2>
 							<h3>Dates obtained</h3>
 							<h3>Political Events near the dates</h3>
